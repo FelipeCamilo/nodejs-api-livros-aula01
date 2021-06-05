@@ -33,7 +33,7 @@ app.put('/livros/', (request, response) => {
 
     const { id, titulo, descricao, autor, anoPublicacao } = request.body;
 
-    const indiceLivro = livros.findIndex( livro => livro,id === id );
+    const indiceLivro = livros.findIndex( livro => livro.id === id );
 
     if( indiceLivro < 0 ) {
         return response.status(400).json({ error: 'Livro não encontrado.'});
